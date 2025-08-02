@@ -1,0 +1,253 @@
+# Student Grievances Portal - VIT Vellore
+
+A comprehensive web application built with Next.js for managing student grievances at VIT Vellore. The portal provides two main interfaces: a student portal for submitting grievances and an admin portal for managing and resolving them.
+
+## 🚀 Features
+
+### Student Portal
+- **Anonymous Grievance Submission**: Students can submit grievances anonymously and receive a tracking ID
+- **Detailed Grievance Submission**: Students can provide their details for follow-up communication
+- **Grievance Tracking**: Track the status of submitted grievances using tracking ID
+- **Multiple Categories**: Support for various grievance categories including Academic, Hostel, Canteen, etc.
+
+### Admin Portal
+- **Regular Admin Dashboard**: Department-specific grievance management
+- **Super Admin Dashboard**: Comprehensive overview with advanced filtering and analytics
+- **User Management**: Add and manage admin users with role-based access
+- **Status Updates**: Update grievance status and assign to departments
+- **Export Functionality**: Export grievance data for reporting
+
+### Advanced Features
+- **Role-Based Access Control**: Different access levels for regular admins and super admins
+- **Advanced Filtering**: Filter by status, department, priority, date range, and subject
+- **Real-time Updates**: Dynamic status tracking and notifications
+- **Responsive Design**: Mobile-friendly interface using Tailwind CSS
+- **Form Validation**: Comprehensive form validation using Zod and React Hook Form
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 15.4.5 with App Router
+- **TypeScript**: For type safety and better development experience
+- **Styling**: Tailwind CSS for responsive and modern UI
+- **Form Handling**: React Hook Form with Zod validation
+- **Icons**: Lucide React for consistent iconography
+- **Authentication**: JWT-based authentication with bcryptjs
+- **Database**: MongoDB (ready for integration)
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── admin/
+│   │   ├── dashboard/          # Admin dashboard
+│   │   └── login/              # Admin login
+│   ├── super-admin/
+│   │   ├── dashboard/          # Super admin dashboard
+│   │   └── login/              # Super admin login
+│   ├── grievance/
+│   │   ├── submit/             # Detailed grievance form
+│   │   ├── anonymous/          # Anonymous grievance form
+│   │   └── track/              # Grievance tracking
+│   ├── api/
+│   │   ├── auth/
+│   │   │   ├── admin/login/    # Admin authentication
+│   │   │   └── super-admin/login/ # Super admin authentication
+│   │   └── grievances/         # Grievance management APIs
+│   ├── globals.css             # Global styles
+│   ├── layout.tsx              # Root layout
+│   └── page.tsx                # Homepage
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd student-grievances-portal
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env.local
+   ```
+   
+   Add the following variables to `.env.local`:
+   ```env
+   JWT_SECRET=your-jwt-secret-key
+   MONGODB_URI=your-mongodb-connection-string
+   NEXTAUTH_SECRET=your-nextauth-secret
+   ```
+
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 👤 Demo Credentials
+
+### Admin Login
+- **Email**: `admin@vitvellore.ac.in`
+- **Password**: `admin123`
+
+### Super Admin Login
+- **Email**: `superadmin@vitvellore.ac.in`
+- **Password**: `superadmin123`
+
+## 📊 Grievance Categories
+
+The portal supports the following grievance categories:
+- General Grievance
+- Proctor Grievance
+- Academic Counselling
+- NRI/Foreign Students Issues
+- Clubs and Chapters
+- ECA Course
+- Student Achievements
+- Day Scholars
+- Day Boarders
+- Disciplinary Issues
+- Hostel
+- Canteen / Eating Places
+- Health Center
+- Campus Shops
+- Other
+
+## 🔐 Authentication & Security
+
+- **JWT Tokens**: Secure authentication using JSON Web Tokens
+- **Password Hashing**: Passwords encrypted using bcryptjs
+- **Role-based Access**: Different permission levels for various user roles
+- **Session Management**: Automatic token expiration and renewal
+
+## 📱 Responsive Design
+
+The portal is fully responsive and works seamlessly across:
+- Desktop computers
+- Tablets
+- Mobile phones
+
+## 🎯 Status Workflow
+
+Grievances follow this status workflow:
+1. **Pending**: Initial submission status
+2. **In Progress**: Grievance is being reviewed/worked on
+3. **Resolved**: Issue has been resolved
+4. **Closed**: Grievance is closed (resolved or dismissed)
+
+## 🔄 Priority Levels
+
+- **Low**: Non-urgent issues
+- **Medium**: Standard priority
+- **High**: Important issues requiring prompt attention
+- **Urgent**: Critical issues requiring immediate action
+
+## 📈 Admin Features
+
+### Regular Admin Dashboard
+- View department-specific grievances
+- Update grievance status
+- Filter and search grievances
+- Basic analytics and statistics
+
+### Super Admin Dashboard
+- **Complete Overview**: Access to all grievances across departments
+- **Advanced Filtering**: Multi-parameter filtering system
+- **User Management**: Add/remove/modify admin users
+- **Analytics**: Comprehensive reporting and trends
+- **Export**: Data export functionality
+- **Role Assignment**: Assign different roles to users
+
+## 🔧 Development
+
+### Available Scripts
+
+```bash
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run linting
+npm run lint
+
+# Type checking
+npm run type-check
+```
+
+### Code Style
+- ESLint configuration for code quality
+- TypeScript for type safety
+- Prettier for code formatting (recommended)
+
+## 🚀 Deployment
+
+### Production Build
+```bash
+npm run build
+npm start
+```
+
+### Deployment Platforms
+The application can be deployed on:
+- Vercel (recommended for Next.js)
+- Netlify
+- AWS
+- Google Cloud Platform
+- Any platform supporting Node.js
+
+## 🔮 Future Enhancements
+
+- **Email Notifications**: Automatic email updates for status changes
+- **File Attachments**: Support for attaching documents/images to grievances
+- **Mobile App**: React Native mobile application
+- **Advanced Analytics**: Detailed reporting and dashboard analytics
+- **Multi-language Support**: Support for regional languages
+- **SMS Notifications**: SMS alerts for critical updates
+- **Integration**: Connect with existing VIT systems
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/new-feature`
+3. Commit changes: `git commit -am 'Add new feature'`
+4. Push to branch: `git push origin feature/new-feature`
+5. Submit a pull request
+
+## 📞 Support
+
+For technical support or questions:
+- Create an issue in the repository
+- Contact the development team
+- Refer to the documentation
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🏫 About VIT Vellore
+
+VIT Vellore is a leading technological university in India, known for its excellence in engineering, technology, and management education. This grievance portal aims to enhance the student experience by providing a transparent and efficient system for addressing student concerns.
+
+---
+
+**Built with ❤️ for VIT Vellore Students**
+# portal
